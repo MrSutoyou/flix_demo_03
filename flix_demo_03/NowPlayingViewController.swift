@@ -31,6 +31,20 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
         fetchMovies()
     }
     
+    func displayAler(){
+        let alertController = UIAlertController(title: "Cannot Get Movie", message: "The Internet connection appears to be offline", preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+            
+        }
+        alertController.addAction(cancelAction)
+        let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
+        }
+        alertController.addAction(OKAction)
+        DispatchQueue.main.async {
+            self.present(alertController, animated: true, completion: nil)
+        }
+    }
+    
     func fetchMovies(){
         activityIndicator.startAnimating()
         let url = URL(string: "https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed")!
@@ -39,6 +53,7 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
         let task = session.dataTask(with: request) { (data, response, error) in
             //This will run when the network request returns
             if let error = error{
+                self.displayAler()
                 print(error.localizedDescription)
             }else if let data = data{
                 let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
