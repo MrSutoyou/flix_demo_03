@@ -1,7 +1,6 @@
-# flix_demo_03
-# Project 1 - Gordon Su
+# Project 1 - flix_demo_03
 
-**Name of your app** is a movies app using the [The Movie Database API](http://docs.themoviedb.apiary.io/#).
+**flix_demo** is a movies app using the [The Movie Database API](http://docs.themoviedb.apiary.io/#).
 
 Time spent: 4 hours spent in total
 
@@ -46,7 +45,7 @@ There is a lot of new library to learn.
 
 ## License
 
-    Copyright [Gordon Su] [name of copyright owner]
+    Copyright [2018] [Gordon Su]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
